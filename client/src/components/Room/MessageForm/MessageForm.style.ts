@@ -41,6 +41,7 @@ export const useMessageFormStyles = makeStyles({
     fontSize: 25,
     float:'right',
     color: colors.button.root,
+    backgroundColor: colors.background.primary,
     border:'none',
     '&:hover':{
         color: colors.button.hover

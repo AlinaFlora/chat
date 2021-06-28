@@ -23,6 +23,7 @@ export function Home() {
   const handleSubmit = (e: any) => {
     e.preventDefault()
     if (linkRef !== null) {
+      // @ts-ignore
       linkRef.current.click()
     }
   }
