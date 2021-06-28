@@ -1,0 +1,39 @@
+{
+  "messages": [
+    {
+      "messageId": "1",
+      "userId": "1",
+      "senderName": "Bob",
+      "messageText": "Hi!",
+      "createdAt": "2021-01-14"
+    },
+    {
+      "messageId": "2",
+      "userId": "2",
+      "senderName": "Alice",
+      "messageText": "Hello!",
+      "createdAt": "2021-02-15"
+    },
+    {
+      "messageId": "lGW_rwZi",
+      "createdAt": "2021-06-27T13:09:11.262Z",
+      "userId": "8LvJIKjk",
+      "messageText": "ggg",
+      "senderName": "Kim"
+    },
+    {
+      "messageId": "EOp4hW8a",
+      "createdAt": "2021-06-28T08:57:02.377Z",
+      "userId": "8LvJIKjk",
+      "messageText": "ccc",
+      "senderName": "Kortney"
+    },
+    {
+      "messageId": "Do2Tki0G",
+      "createdAt": "2021-06-28T09:38:38.666Z",
+      "userId": "8LvJIKjk",
+      "messageText": "here",
+      "senderName": "Kortney"
+    }
+  ]
+}
