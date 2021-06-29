@@ -1,3 +1,2 @@
-export { useChat } from './useChat'
+export { useMessages } from './useMessages'
 export { useLocalStorage } from './useLocalStorage'
-export { useBeforeUnload } from './useBeforeUnload'

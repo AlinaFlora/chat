@@ -9,6 +9,24 @@ export const useMessagesListStyles = makeStyles({
     borderRadius: '4px',
     overflow: 'auto'
   },
+  myMsgCard: {
+    textAlign: 'right',
+    float: 'right',
+    width:'100%',
+    backgroundColor:colors.background.blue,
+    color: colors.font.white,
+    boxShadow:'none',
+    paddingRight: '10px'
+  },
+  notMyMsgCard: {
+    textAlign: 'left',
+    float: 'left',
+    width:'100%',
+    backgroundColor:colors.background.black,
+    color: colors.font.white,
+    boxShadow:'none',
+    paddingLeft: '10px'
+  },
   myMsg: {
     padding: '10px',
     textAlign: 'right',
@@ -37,8 +55,9 @@ export const useMessagesListStyles = makeStyles({
   },
   removeBtn:{
     fontSize: 12,
+    maxWidth: '10px',
+    maxHeight: '10px',
     color:colors.font.white,
-    fontWeight: 'bold',
 backgroundColor: colors.background.blue,
     float:'left',
     border: 'none',

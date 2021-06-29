@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 
-export const useLocalStorage = (key, initialValue) => {
-    const [value, setValue] = useState(() => {
-        const item = window.localStorage.getItem(key)
-        return item ? JSON.parse(item) : initialValue
-    })
+export const useLocalStorage = (key, initVal) => {
+    const initialData = () => {
+        let val = window.localStorage.getItem(key)
+        return val? JSON.parse(val) : initVal
+    }
+    const [value, setValue] = useState(initialData)
 
     useEffect(() => {
-        const item = JSON.stringify(value)
-        window.localStorage.setItem(key, item)
+        window.localStorage.setItem(key, JSON.stringify(value))
         // eslint-disable-next-line
     }, [value])
     return [value, setValue]

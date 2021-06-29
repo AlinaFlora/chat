@@ -1,38 +1,32 @@
-import TimeAgo from 'react-timeago'
-import { Button, Card, ListGroup } from 'react-bootstrap'
+import { ListGroup } from 'react-bootstrap'
+import { Button, Card, Typography } from "@material-ui/core"
 import { AiOutlineDelete } from 'react-icons/ai'
 import { useMessagesListStyles } from './MessagesList.style';
 
-export const MessagesListItem = ({ msg, removeMessage }) => {
+export const MessagesListItem = ({ message, removeMessage }) => {
     const classes = useMessagesListStyles()
 
-    const { messageId, messageText, senderName, createdAt, currentUser } = msg
-
-    const handleRemoveMessage = (id) => {
-        removeMessage(id)
-    }
+    const { messageId, messageBody, currentUser } = message
 
     return (
         <ListGroup.Item
             className={currentUser ? classes.myMsg : classes.notMyMsg}
         >
-            <Card>
-                <Card.Header className={classes.cardHeader}>
-                    <Card.Text as={TimeAgo} date={createdAt}/>
-                    <Card.Text>{senderName}</Card.Text>
-                </Card.Header>
-                <Card.Body className={classes.cardBody}>
-                    <Card.Text>{messageText}</Card.Text>
+            <Card className={currentUser ? classes.myMsgCard : classes.notMyMsgCard}>
+                <div className={classes.cardBody}>
+                    <Typography color="white" gutterBottom>
+                        {messageBody}
+                    </Typography>
                     {currentUser && (
                         <Button
                             variant='none'
                             className={classes.removeBtn}
-                            onClick={() => handleRemoveMessage(messageId)}
+                            onClick={() => removeMessage(messageId)}
                         >
                             <AiOutlineDelete/>
                         </Button>
                     )}
-                </Card.Body>
+                </div>
             </Card>
         </ListGroup.Item>
     )

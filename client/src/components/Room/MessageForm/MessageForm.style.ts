@@ -21,21 +21,10 @@ export const useMessageFormStyles = makeStyles({
   },
   formControlMsg:
     {
-      padding: '12px 17px',
-      borderRadius: 15,
-      fontSize: 14,
-      border: '1px solid',
-      transition:  'border-color .3s',
-      fontWeight: 400,
-      letterSpacing: 1,
-      cursor: 'pointer',
-      width: '90%',
+      width: '80%',
       borderColor: colors.decoration.black,
       backgroundColor: colors.background.primary,
-      '&:focus':{
-        outline: 'none',
-        borderColor: colors.decoration.primary,
-      },
+
     },
   sendMsgBtn: {
     fontSize: 25,

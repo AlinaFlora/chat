@@ -1,63 +1,52 @@
-import { useRef, useState } from 'react'
-import { Form } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import { FormControl, MenuItem, Select } from "@material-ui/core"
-import { useLocalStorage } from '../../hooks'
-import { StyledButton, useSharedStyles } from "../../shared/sharedStyles.style"
+import React, { useState } from 'react'
+import { FormControl, Grid, MenuItem, Select } from "@material-ui/core"
+import { Formik, Form} from 'formik'
+import { FormLabel, StyledButton, useSharedStyles } from "../../shared/sharedStyles.style"
 
 export function Home() {
   const classes = useSharedStyles()
-
   const [roomId, setRoomId] = useState('first')
-  const [username, setUsername] = useLocalStorage('username', 'Kate')
-  const linkRef = useRef(null)
-
-  const handleNameChange = (e: any) => {
-    setUsername(e.target.value)
+  const initialValues = {
+    roomId: roomId ? roomId : 'first'
   }
-
-  const handleRoomChange = (e: any) => {
-    setRoomId(e.target.value)
-  }
-
   const handleSubmit = (e: any) => {
     e.preventDefault()
-    if (linkRef !== null) {
-      // @ts-ignore
-      linkRef.current.click()
-    }
+    window.location.replace(`/${roomId}`)
   }
 
-  const trimmed = username.trim()
-
   return (
+    <>
+      <Formik
+        onSubmit={handleSubmit}
+        initialValues={initialValues}
+      >
     <Form
       className={classes.form}
       onSubmit={handleSubmit}
     >
-      <Form.Group  className={classes.formGroup}>
-        <Form.Label className={classes.formLabel}>Name:</Form.Label>
-        <Form.Control  className={classes.formControl} value={username} onChange={handleNameChange}/>
-      </Form.Group>
-      <Form.Group>
-        <Form.Label className={classes.formLabel}>Room:</Form.Label>
-        <FormControl className={classes.formControl}>
-          <Select
-            labelId="select-room"
-            id="select-room"
-            value={roomId}
-            onChange={handleRoomChange}
+        <Grid item xs={12}>
+          <FormLabel
+            className={classes.formLabel}
           >
-            <MenuItem value={'first'}>First</MenuItem>
-            <MenuItem value={'second'}>Second</MenuItem>
-          </Select>
-        </FormControl>
-      </Form.Group>
-      {trimmed && (
-        <StyledButton  as={Link} to={`/${roomId}`} ref={linkRef}>
+            Room:
+          </FormLabel>
+          <FormControl className={classes.formControl}>
+            <Select
+              labelId="select-room"
+              id="select-room"
+              value={roomId}
+              onChange={(e: any)=> setRoomId(e.target.value)}
+            >
+              <MenuItem value={'first'}>First</MenuItem>
+              <MenuItem value={'second'}>Second</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
+        <StyledButton   type="submit" onClick={()=>{}} >
           Confirm and chat
         </StyledButton>
-      )}
     </Form>
+      </Formik>
+      </>
   )
 }

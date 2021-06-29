@@ -1,5 +1,10 @@
 const config = {
-  SERVER_URL: 'http://localhost:5000'
+  SERVER_URL: 'http://localhost:5000',
+  ADD_MESSAGE: 'message:add',
+  REMOVE_MESSAGE: 'message:remove',
+  NEW_MESSAGE: 'messages',
+  GET_MESSAGE: 'message:get',
+  DISCONNECT: 'disconnect',
 }
 
 export { config }

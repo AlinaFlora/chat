@@ -2,6 +2,39 @@ import { makeStyles, styled } from "@material-ui/core"
 import { Button } from "react-bootstrap"
 import { colors } from "../config"
 
+export const FormLabel = styled('label')({
+  display: 'block',
+  color: colors.font.black,
+  fontWeight: 'bold',
+  fontSize: 14,
+  paddingLeft: 15,
+  marginBottom: 5,
+})
+
+export const StyledFormInput = styled('input')({
+  padding: '12px 17px',
+  borderRadius: 15,
+  fontSize: 14,
+  border: '1px solid transparent',
+  transition: 'border-color .3s',
+  fontWeight: 400,
+  letterSpacing: 1,
+  cursor: 'pointer',
+  width: '90%',
+  backgroundColor: colors.background.primary,
+  '&:focus': {
+    borderRadius: 15,
+    outline: 'none',
+    borderColor: colors.decoration.primary,
+    backgroundColor: colors.background.primary,
+  },
+  '&::placeholder': {
+    fontWeight: 400,
+    color: colors.font.black,
+    opacity: 0.6,
+  },
+})
+
 export const StyledButton = styled(Button)({
   width: '100%',
   background: colors.button.root,
@@ -51,8 +84,8 @@ export const useSharedStyles = makeStyles({
     color: colors.font.black,
     fontWeight: 'bold',
     fontSize: 14,
-    paddingLeft: 15,
-    marginBottom: 5,
+    marginTop: 20,
+    padding: '10px, 15px'
   },
   formControl: {
     padding: '12px 17px',

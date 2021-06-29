@@ -3,9 +3,7 @@ import { colors } from "../config"
 
 export const StyledContainer = styled('div')({
   padding: '0 110px',
-  backgroundColor: colors.background.primary,
   maxWidth:'900px'
-
 })
 
 export const useAppStyles = makeStyles({
@@ -13,6 +11,7 @@ export const useAppStyles = makeStyles({
     display: 'flex',
     color: colors.font.primary,
     minWidth: '250px',
+    marginTop: '20px',
     '&::before': {
       content: '""',
       display: 'block',

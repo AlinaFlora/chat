@@ -1,39 +1,46 @@
 {
   "messages": [
     {
-      "messageId": "1",
-      "userId": "1",
-      "senderName": "Bob",
-      "messageText": "Hi!",
-      "createdAt": "2021-01-14"
-    },
-    {
-      "messageId": "2",
+      "messageId": "1EciKKt_",
       "userId": "2",
-      "senderName": "Alice",
-      "messageText": "Hello!",
-      "createdAt": "2021-02-15"
+      "messageText": "I am fine.",
+      "createdAt": "2021-06-29T09:08:15.969Z"
     },
     {
-      "messageId": "lGW_rwZi",
-      "createdAt": "2021-06-27T13:09:11.262Z",
+      "messageId": "zzaUdBzi",
       "userId": "8LvJIKjk",
-      "messageText": "ggg",
-      "senderName": "Kim"
+      "messageBody": "Hi!",
+      "createdAt": "2021-06-29T09:08:18.969Z"
     },
     {
-      "messageId": "EOp4hW8a",
-      "createdAt": "2021-06-28T08:57:02.377Z",
+      "messageId": "rSgV68-w",
+      "createdAt": "2021-06-29T11:27:35.274Z",
       "userId": "8LvJIKjk",
-      "messageText": "ccc",
-      "senderName": "Kortney"
+      "messageBody": "How are youo?"
     },
     {
-      "messageId": "Do2Tki0G",
-      "createdAt": "2021-06-28T09:38:38.666Z",
+      "messageId": "EUL3h_mF",
+      "createdAt": "2021-06-29T11:32:59.380Z",
       "userId": "8LvJIKjk",
-      "messageText": "here",
-      "senderName": "Kortney"
+      "messageBody": " am fine"
+    },
+    {
+      "messageId": "DCNbAd8V",
+      "createdAt": "2021-06-29T11:52:02.672Z",
+      "userId": "8LvJIKjk",
+      "messageBody": "How are you?"
+    },
+    {
+      "messageId": "jXK3NcQW",
+      "createdAt": "2021-06-29T11:52:05.555Z",
+      "userId": "8LvJIKjk",
+      "messageBody": "Hellooo"
+    },
+    {
+      "messageId": "pytvf6kL",
+      "createdAt": "2021-06-29T11:52:09.181Z",
+      "userId": "8LvJIKjk",
+      "messageBody": "I am here "
     }
   ]
 }

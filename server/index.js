@@ -1,6 +1,6 @@
+const useMessageHandlers = require('./handlers/messageHandlers');
 const server = require('http').createServer();
-const registerMessageHandlers = require('./handlers/messageHandlers');
-const registerUserHandlers = require('./handlers/userHandlers');
+
 const io = require('socket.io')(server, {
   cors: {
     origin: '*',
@@ -11,18 +11,20 @@ const io = require('socket.io')(server, {
   allowEIO3: true
 });
 
-const onConnection = (socket) => {
-  const { roomId } = socket.handshake.query;
-  socket.roomId = roomId;
-  socket.join(roomId);
-  registerMessageHandlers(io, socket)
-  registerUserHandlers(io, socket)
-
-  socket.on('disconnect', () => {
-    socket.leave(roomId)
-  })
-};
-
-io.on('connection', onConnection);
+const config = {
+  DISCONNECT: 'disconnect',
+  CONNECT: 'connection'
+}
 const PORT = process.env.PORT || 5000;
+
+io.on(config.CONNECT, function (socket)  {
+  socket.roomId = socket.handshake.query;
+  socket.join(socket.handshake.query);
+  useMessageHandlers(io, socket)
+
+  socket.on(config.DISCONNECT, () => {
+    socket.leave(socket.roomId )
+  })
+}
+);
 server.listen(PORT);

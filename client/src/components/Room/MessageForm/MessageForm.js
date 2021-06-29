@@ -1,41 +1,51 @@
-import { useState } from 'react'
-import { Button, Form } from 'react-bootstrap'
+import React, { useState } from 'react'
 import { FiSend } from 'react-icons/fi'
+import { Button, Grid } from "@material-ui/core"
+import { Formik, Form, Field} from 'formik'
+import { StyledFormInput } from "../../../shared/sharedStyles.style"
 import { useMessageFormStyles } from './MessageForm.style'
 
-export const MessageForm = ({ username, sendMessage }) => {
+export const MessageForm = ({ sendMessage }) => {
     const classes = useMessageFormStyles()
+    const [messageBody, setMessageBody] = useState('')
 
-    const [text, setText] = useState('')
+    const initialValues = {
+        messageContent: messageBody ? messageBody : ''
+    }
 
     const handleMessageSend = (e) => {
         e.preventDefault()
-        const trimmed = text.trim()
+        const trimmed = messageBody.trim()
         if (trimmed) {
-            sendMessage({ messageText: text, senderName: username })
-            setText('')
+            sendMessage({ messageBody: messageBody })
+            setMessageBody('')
         }
     }
 
-    const handleChangeText = (e) => {
-        setText(e.target.value)
-    }
 
     return (
         <>
+            <Formik
+                initialValues={initialValues}
+            >
             <Form onSubmit={handleMessageSend} className={classes.form}>
-                <Form.Group className={classes.formGroup}>
-                    <Form.Control
-                        onChange={handleChangeText}
-                        type='text'
-                        value={text}
+                <Grid container spacing={3} className={classes.formGroup}>
+                    <Field
+                        id="messageContent"
+                        name="messageContent"
+                        type="text"
+                        as={StyledFormInput}
+                        placeholder={'Type a message...'}
+                        onChange={(e)=>  setMessageBody(e.target.value)}
+                        value={messageBody}
                         className={classes.formControlMsg}
                     />
                     <Button   className={classes.sendMsgBtn}  type='submit' variant='success'>
                         <FiSend/>
                     </Button>
-                </Form.Group>
+                </Grid>
             </Form>
+            </Formik>
         </>
     )
 }
