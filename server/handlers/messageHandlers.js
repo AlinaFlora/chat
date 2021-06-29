@@ -5,7 +5,7 @@ const messagesDB = new FileSync('db/messages.json')
 const db = lowdb(messagesDB)
 
 const config = {
-    NEW_MESSAGE: 'messages',
+    ALL_MESSAGES: 'messages',
     ADD_MESSAGE: 'message:add',
     REMOVE_MESSAGE: 'message:remove',
     GET_MESSAGE: 'message:get',
@@ -13,18 +13,17 @@ const config = {
 
 module.exports = (io, socket) => {
     const getAllMessages = () => {
-        io.in(socket.roomId).emit(config.NEW_MESSAGE,  db.get(config.NEW_MESSAGE).value())
+        io.in(socket.roomId).emit(config.ALL_MESSAGES,  db.get(config.ALL_MESSAGES).value())
     }
 
     const removeMessage = (messageId) => {
-        db.get(config.NEW_MESSAGE).remove({ messageId }).write()
+        db.get(config.ALL_MESSAGES).remove({ messageId }).write()
         getAllMessages()
     }
 
     const addNewMessage = (message) => {
-        db.get(config.NEW_MESSAGE).push({
+        db.get(config.ALL_MESSAGES).push({
                 messageId: nanoid(8),
-                createdAt: new Date(),
                 ...message
             }).write()
         getAllMessages()

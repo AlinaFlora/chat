@@ -3,42 +3,30 @@
     {
       "messageId": "1EciKKt_",
       "userId": "2",
-      "messageText": "I am fine.",
-      "createdAt": "2021-06-29T09:08:15.969Z"
+      "messageText": "I am fine."
     },
     {
       "messageId": "zzaUdBzi",
       "userId": "8LvJIKjk",
-      "messageBody": "Hi!",
-      "createdAt": "2021-06-29T09:08:18.969Z"
-    },
-    {
-      "messageId": "rSgV68-w",
-      "createdAt": "2021-06-29T11:27:35.274Z",
-      "userId": "8LvJIKjk",
-      "messageBody": "How are youo?"
+      "messageBody": "Hi!"
     },
     {
       "messageId": "EUL3h_mF",
-      "createdAt": "2021-06-29T11:32:59.380Z",
       "userId": "8LvJIKjk",
       "messageBody": " am fine"
     },
     {
       "messageId": "DCNbAd8V",
-      "createdAt": "2021-06-29T11:52:02.672Z",
       "userId": "8LvJIKjk",
       "messageBody": "How are you?"
     },
     {
       "messageId": "jXK3NcQW",
-      "createdAt": "2021-06-29T11:52:05.555Z",
       "userId": "8LvJIKjk",
       "messageBody": "Hellooo"
     },
     {
       "messageId": "pytvf6kL",
-      "createdAt": "2021-06-29T11:52:09.181Z",
       "userId": "8LvJIKjk",
       "messageBody": "I am here "
     }

@@ -23,7 +23,9 @@ io.on(config.CONNECT, function (socket)  {
   useMessageHandlers(io, socket)
 
   socket.on(config.DISCONNECT, () => {
-    socket.leave(socket.roomId )
+    if(socket.roomId){
+      socket.leave(socket.roomId);
+    }
   })
 }
 );
