@@ -1,6 +1,6 @@
 import { ListGroup } from 'react-bootstrap'
 import { Button, Card, Typography } from "@material-ui/core"
-import { AiOutlineDelete } from 'react-icons/ai'
+import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined'
 import { useMessagesListStyles } from './MessagesList.style';
 
 export const MessagesListItem = ({ message, removeMessage }) => {
@@ -14,18 +14,18 @@ export const MessagesListItem = ({ message, removeMessage }) => {
         >
             <Card className={currentUser ? classes.myMsgCard : classes.notMyMsgCard}>
                 <div className={classes.cardBody}>
-                    <Typography color="white" gutterBottom>
-                        {messageBody}
-                    </Typography>
                     {currentUser && (
                         <Button
                             variant='none'
                             className={classes.removeBtn}
                             onClick={() => removeMessage(messageId)}
                         >
-                            <AiOutlineDelete/>
+                            <DeleteOutlinedIcon/>
                         </Button>
                     )}
+                    <Typography color="white" gutterBottom>
+                        {messageBody}
+                    </Typography>
                 </div>
             </Card>
         </ListGroup.Item>

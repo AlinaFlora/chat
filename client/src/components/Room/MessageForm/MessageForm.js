@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FiSend } from 'react-icons/fi'
+import NearMeOutlinedIcon from '@material-ui/icons/NearMeOutlined'
 import { Button, Grid } from "@material-ui/core"
 import { Formik, Form, Field} from 'formik'
 import { StyledFormInput } from "../../../shared/sharedStyles.style"
@@ -41,7 +41,7 @@ export const MessageForm = ({ sendMessage }) => {
                         className={classes.formControlMsg}
                     />
                     <Button   className={classes.sendMsgBtn}  type='submit' variant='success'>
-                        <FiSend/>
+                        <NearMeOutlinedIcon/>
                     </Button>
                 </Grid>
             </Form>

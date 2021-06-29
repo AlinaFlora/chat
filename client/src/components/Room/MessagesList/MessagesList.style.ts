@@ -54,9 +54,10 @@ export const useMessagesListStyles = makeStyles({
     fontSize: 18
   },
   removeBtn:{
-    fontSize: 12,
-    maxWidth: '10px',
+    fontSize: 8,
+    maxWidth: '15px',
     maxHeight: '10px',
+    marginTop: '5px',
     color:colors.font.white,
 backgroundColor: colors.background.blue,
     float:'left',
